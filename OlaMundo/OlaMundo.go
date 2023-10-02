@@ -2,9 +2,15 @@ package main
 
 import "fmt"
 
-func Ola() string {
-	return "Olá, Mundo!"
+// Refatoracao do codigo, mantem passando nos testes
+const olaPortugues = "Olá, "
+
+func Ola(nome string) string {
+	if nome == "" {
+		nome = "mundo"
+	}
+	return olaPortugues + nome + "!"
 }
 func main() {
-	fmt.Println(Ola())
+	fmt.Println(Ola("Chris"))
 }
