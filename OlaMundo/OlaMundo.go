@@ -1,16 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Refatoracao do codigo, mantem passando nos testes
 const olaPortugues = "Olá, "
+const olaEspanhol = "Hola, "
 
-func Ola(nome string) string {
+func Ola(nome string, idioma string) string {
 	if nome == "" {
 		nome = "mundo"
 	}
-	return olaPortugues + nome + "!"
+	switch idioma {
+	case "espanhol":
+		return olaEspanhol + nome + "!"
+	default:
+		return olaPortugues + nome + "!"
+	}
 }
 func main() {
-	fmt.Println(Ola("Chris"))
+	fmt.Println(Ola("Chris", ""))
 }
