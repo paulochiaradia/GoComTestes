@@ -1,24 +1,27 @@
 package main
 
-import (
-	"fmt"
-)
-
 // Refatoracao do codigo, mantem passando nos testes
 const olaPortugues = "Olá, "
 const olaEspanhol = "Hola, "
+const olaFrances = "Bonjour, "
 
 func Ola(nome string, idioma string) string {
 	if nome == "" {
 		nome = "mundo"
 	}
+	return prefixoDeSaudacao(idioma) + nome + "!"
+}
+
+func prefixoDeSaudacao(idioma string) (prefixo string) {
 	switch idioma {
 	case "espanhol":
-		return olaEspanhol + nome + "!"
+		prefixo = olaEspanhol
+	case "francês":
+		prefixo = olaFrances
 	default:
-		return olaPortugues + nome + "!"
+		prefixo = olaPortugues
 	}
+	return
 }
 func main() {
-	fmt.Println(Ola("Chris", ""))
 }
