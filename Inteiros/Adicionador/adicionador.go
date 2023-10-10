@@ -1,8 +1,6 @@
-package main
+package inteiros
 
-func adiciona(x, y int) int {
+// Adiciona recebe dois inteiros e retorna a soma deles
+func Adiciona(x, y int) int {
 	return x + y
-}
-
-func main() {
 }
